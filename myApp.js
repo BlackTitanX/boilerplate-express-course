@@ -9,7 +9,7 @@ app.get("/",(req,res)=>{
 })
 
 
-app.get("/json",(req,res)=>{
+app.get("/json",logger,(req,res)=>{
  if(process.env.MESSAGE_STYLE === "uppercase"){
  res.json({"message": "HELLO JSON"});
  }else{
@@ -18,7 +18,11 @@ app.get("/json",(req,res)=>{
 })
 
 
+const logger = (req, res, next)=>{
+  console.log(req.method, req.path, req.ip)
 
+ next();
+}
 
 
 
