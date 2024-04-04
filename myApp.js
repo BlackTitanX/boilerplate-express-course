@@ -2,6 +2,15 @@ let express = require('express');
 let app = express();
 require('dotenv').config() 
 
+const logger = (req, res, next)=>{
+  console.log(req.method, req.path, req.ip)
+
+ next();
+}
+
+
+
+
 app.use("/public", express.static(__dirname + "/public"));
 
 app.get("/",(req,res)=>{
@@ -18,11 +27,7 @@ app.get("/json",logger,(req,res)=>{
 })
 
 
-const logger = (req, res, next)=>{
-  console.log(req.method, req.path, req.ip)
 
- next();
-}
 
 
 
