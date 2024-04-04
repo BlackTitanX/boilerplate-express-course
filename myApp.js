@@ -12,13 +12,14 @@ const logger = (req, res, next)=>{
 
 
 app.use("/public", express.static(__dirname + "/public"));
+app.use(logger);
 
 app.get("/",(req,res)=>{
  res.sendFile(__dirname+"/views/index.html")
 })
 
 
-app.get("/json",logger,(req,res)=>{
+app.get("/json",(req,res)=>{
  if(process.env.MESSAGE_STYLE === "uppercase"){
  res.json({"message": "HELLO JSON"});
  }else{
