@@ -32,6 +32,11 @@ app.get("/:word/echo",(req,res)=>{
 
 })
 
+app.get("/name/:firstname/:lastname",(req,res)=>{
+  res.json({"name": req.params.firstname, req.params.lastname});
+
+})
+
 app.get('/now', function(req, res, next) {
   req.time = new Date().toString();
   next();
