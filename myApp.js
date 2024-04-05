@@ -29,7 +29,7 @@ app.get("/json",(req,res)=>{
 
 app.get("/:word/echo",(req,res)=>{
  const {word } = req.params.word;
-  res.json({"echo": word});
+  res.json(req.params);
 
 })
 
