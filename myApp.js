@@ -40,6 +40,11 @@ app.get("/name",(req,res)=>{
 
 })
 
+app.post("/name",(req,res)=>{
+  res.json({"name": req.body.first + " " + req.body.last});
+
+})
+
 app.get('/now', function(req, res, next) {
   req.time = new Date().toString();
   next();
