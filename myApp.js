@@ -28,8 +28,7 @@ app.get("/json",(req,res)=>{
 })
 
 app.get("/:word/echo",(req,res)=>{
- const {word } = req.params.word;
-  res.json(req.params);
+  res.json("echo": req.params.word);
 
 })
 
