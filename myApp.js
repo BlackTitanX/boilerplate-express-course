@@ -33,7 +33,7 @@ app.get("/:word/echo",(req,res)=>{
 })
 
 app.get("/name/:firstname/:lastname",(req,res)=>{
-  res.json({"name": req.params.firstname, req.params.lastname});
+  res.json({"name": req.params.firstname + " " + req.params.lastname});
 
 })
 
