@@ -27,6 +27,12 @@ app.get("/json",(req,res)=>{
  }
 })
 
+app.get("/:word/echo",(req,res)=>{
+ const word = req.params.word;
+  res.json({"echo": word});
+
+})
+
 app.get('/now', function(req, res, next) {
   req.time = new Date().toString();
   next();
